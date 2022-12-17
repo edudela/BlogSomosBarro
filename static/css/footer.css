@@ -1,0 +1,23 @@
+.footer_container{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    background:#fdfdfd;
+    font-family: 'Inter';
+    font-weight: bold;
+    
+    
+}
+
+.iconos_footer{
+    display: flex;
+
+}
+
+.imagen_redes__footer{
+    width: 30px;
+    height: 15px;
+
+   
+}
+

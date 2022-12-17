@@ -1,0 +1,46 @@
+.redes_sociales{
+  display: flex;
+  justify-content: center;
+}
+
+.imagen{
+  width: 150px;
+  height: 100px;
+  
+  margin: 2rem;
+}
+
+.texto_icono{
+  text-align: center;
+}
+
+.redes_iconos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.titulo__contacto{
+  display: flex;
+  color: #fdfdfd;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  font-weight: bold;
+  background: #D2B48C;
+  border-radius: 10px;
+
+}
+
+.seccion_contacto{
+  padding-top: .5rem;
+}
+
+.texto_icono{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+}

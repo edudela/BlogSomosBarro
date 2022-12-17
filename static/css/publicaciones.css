@@ -1,0 +1,38 @@
+.titulo__publicaciones{
+
+    display: flex;
+    color: #fdfdfd;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    font-weight: bold;
+    background: #D2B48C;
+    border-radius: 10px;
+    
+}
+
+.tarjetas{
+    border-radius: 20px;
+    padding-top: .7rem;
+    transition: all 0.2s ease-in;
+    
+}
+
+.card-title{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.card-text{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+.card:hover{
+    color: #fdfdfd;
+    background-color: #D2B48C;
+}

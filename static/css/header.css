@@ -1,0 +1,38 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+.navbar{
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+
+.nav-item{
+    width: 100px;
+
+    align-items: center;
+
+}
+
+.botones{
+    display: flex;
+    padding-right: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.botones__acceso{
+    padding-left: 0.5rem;
+}
+
+.btn{
+    background-color: #D2B48C;
+    border-radius: 6px;
+    border-color: #D2B48C;
+    font-weight: bold;
+    color: #fdfdfd;
+}

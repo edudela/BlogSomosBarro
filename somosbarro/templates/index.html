@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block contenido %}
+
+        <section class="presentacion">
+            <div class="presentacion_texto">
+                <h1 class="texto">Fundación Somos Barro</h1>
+                <h2>Nuestro principal objetivo es construinos colectivamente a través del Arte, promoviendo políticas de inclusión, ampliando el acceso a la educación.</h2>
+            </div>
+
+            <div class="presentacion_imagen"> 
+                <img src="static/img/presentacionimagen.svg" alt="iamgen"> 
+                
+            </div>
+
+
+        </section>
+
+       
+     <!--seccion publicaciones-->
+        
+        <section class="publicaciones">
+            <h2 class="titulo__publicaciones">Publicaciones</h2>
+
+            <div class=" tarjetas row row-cols-1 row-cols-md-3 g-4">
+              {% for noticia in noticias%}
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="static/img/letra-a-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ noticia.titulo }}</h5>
+                      <p class="card-text">{{ noticia.contenido }}.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Publicado el 12/12/2022</small>
+                    </div>
+                  </div>
+                </div>
+              {% endfor%}
+            </div>
+        </section>
+
+
+
+    <!--Contacto-->
+        <section class="seccion_contacto">
+            <h2 class="titulo__contacto">Contacto</h2>
+
+            <div class="redes_sociales">
+                
+                <div class="redes_iconos">
+                    <div>
+                        <a href="#">
+                            <img class="imagen" src="static/img/redes/whatsapp.svg" alt="Whatsapp">
+                            <p class="texto_icono">3624313131</p>
+                          </a>
+                    </div>
+                  
+                    <div>
+                        <a href="#">
+                            <img class="imagen" src="static/img/redes/envelope-at.svg" alt="Mail">
+                            <p class="texto_icono">somosbarro@gmail.com</p>
+                        </a>
+                    </div>
+                  
+
+                    <div>
+                
+                        <a href="#">
+                            <img class="imagen" src="static/img/redes/map.svg" alt="Ubicacion">
+                            <p class="texto_icono">concordia 123123</p>
+                        </a>
+                    </div>
+                 
+
+                  
+                </div>
+              </div>
+        
+        </section>
+{% endblock %}

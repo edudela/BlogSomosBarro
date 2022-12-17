@@ -1,0 +1,53 @@
+.main{
+    padding-top: 10rem;
+}
+
+.presentacion{
+    
+    display: grid;
+    grid-gap: .2rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:  100%;
+    height: calc(100vh - 300px);
+    padding-top: 2rem;
+}
+
+
+.presentacion_texto{
+    padding-top: 8rem;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    
+
+}
+
+.presentacion_imagen{
+   
+    grid-column: 2/2;
+    grid-row: 1/1;
+    justify-content: flex-end;
+    padding-left: 10rem;
+    background-image: url("../imagnes/Purple\ Circle.svg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 500px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 98px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 32px;
+
+}

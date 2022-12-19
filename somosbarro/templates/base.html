@@ -43,7 +43,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="quienessomos.html">¿Quienes Somos?</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'quienessomos'%}">¿Quienes Somos?</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Noticias</a>
@@ -63,10 +63,18 @@
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 </div>
+                {% if user.is_authenticated %}
+                    <p>Hola {{ user.username }}</p>
+                    <a class="btn btn-success" href="{%url 'blog_auth:logout'%}">Cerrar Sesión</a>
+                {% else %}
                 <div class="botones__acceso">
-                    <button type="button" class="btn btn-primary">Acceder</button>
-                    <button type="button" class="btn btn-primary">Registrarse</button>
+                    <a class="btn btn-success" href="{%url 'blog_auth:login'%}">Acceder</a>
+                    <!--<button type="button" class="btn btn-primary">Acceder</button>
+                    <button type="button" class="btn btn-primary">Registrarse</button>-->
+                    <a class="btn btn-primary" href="{%url 'blog_auth:register'%}">Registrarse</a>
                 </div>
+               
+                {% endif %}
             </div>
     </header>
 

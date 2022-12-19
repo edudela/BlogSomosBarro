@@ -1,7 +1,7 @@
-"""somosbarro URL Configuration
+"""proyectofinalInfo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,17 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from blogapp import views
+from django.urls import include,path
+from django.urls import re_path
 from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import include,path
-from django.urls import re_path as url
+from blogapp import views
 
 urlpatterns = [
-    path('',views.index, name = 'index'),
-    path('quienessomos/',views.quienessomos, name = 'quienessomos'),
-    path('admin/', admin.site.urls),
-    url('noticias/', include('blogapp.urls')),
-    path('registration/', include('blog_auth.urls')),
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT, show_indexes=True)
-
+    path('noticias/<int:id>/', views.noticiasdetalle, name='noticiasdetalle'),
+    path('comentario/<int:id>/approve', views.comment_approve, name='comment_approve'),
+    path('comentario/<int:id>/remove', views.comment_remove, name='comment_remove'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)

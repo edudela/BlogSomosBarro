@@ -1,6 +1,5 @@
 {% extends 'base.html'%}
 {% load static %}
-
 {% block contenido %}
 
         <section class="presentacion">
@@ -24,16 +23,17 @@
             <h2 class="titulo__publicaciones">Publicaciones</h2>
 
             <div class=" tarjetas row row-cols-1 row-cols-md-3 g-4">
-              {% for noticia in noticias%}
+              {% for noticia in noticiasdestacadas%}
                 <div class="col">
                   <div class="card h-100">
-                    <img src="static/img/letra-a-1.jpg" class="card-img-top" alt="...">
+                    <img src="{{noticia.img}}" width="500" alt="" class="card-img-top">
                     <div class="card-body">
                       <h5 class="card-title">{{ noticia.titulo }}</h5>
                       <p class="card-text">{{ noticia.contenido }}.</p>
                     </div>
                     <div class="card-footer">
                       <small class="text-muted">Publicado el 12/12/2022</small>
+                      <p><a class="btn btn-secondary" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+
 {% block contenido %}
 
         <section class="presentacion">
@@ -9,7 +10,7 @@
             </div>
 
             <div class="presentacion_imagen"> 
-                <img src="static/img/presentacionimagen.svg" alt="iamgen"> 
+                <img src="{% static 'img/presentacionimagen.svg'%}" alt="iamgen"> 
                 
             </div>
 
@@ -26,13 +27,14 @@
               {% for noticia in noticiasdestacadas%}
                 <div class="col">
                   <div class="card h-100">
-                    <img src="{{noticia.img}}" width="500" alt="" class="card-img-top">
+                    <img src="../../../media/{{noticia.img}}" width="300" alt="" class="card-img-top">
+                    <!--<img src="media/img/noticias/img" width="500" alt="" class="card-img-top">-->
                     <div class="card-body">
                       <h5 class="card-title">{{ noticia.titulo }}</h5>
                       <p class="card-text">{{ noticia.contenido }}.</p>
                     </div>
                     <div class="card-footer">
-                      <small class="text-muted">Publicado el 12/12/2022</small>
+                      <small class="text-muted">Publicado: {{ noticia.publicado }}</small>
                       <p><a class="btn btn-secondary" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
                     </div>
                   </div>

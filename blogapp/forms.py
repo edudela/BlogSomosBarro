@@ -4,15 +4,16 @@ from .models import Comentarios
 
 class CommentarioForm(forms.Form):
         model = Comentarios
-        fields = ('autor', 'cuerpo_comentario',)
+        fields = ('cuerpo_comentario',)
 
-        autor = forms.CharField(
+        '''autor = forms.CharField(
             max_length=60,
             widget=forms.TextInput(attrs={
                 "class": "form-control",
                 "placeholder": "Ingresa tu nombre"
             })
         )
+        '''
         cuerpo_comentario = forms.CharField(widget=forms.Textarea(
             attrs={
                 "class": "form-control comment-textarea",

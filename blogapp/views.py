@@ -6,7 +6,7 @@ from django.http.response import Http404
 from .forms import CommentarioForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -15,7 +15,7 @@ def index(request):
     ultimasnoticias = Noticias.objects.all().order_by('creado').reverse()[:3]
     context ={
         'noticiasdestacadas':ultimasnoticias,
-        "MEDIA_ROOT": 'media/img/noticias/'
+        "MEDIA_ROOT":'media/img/noticias/'
     }
     return render(request, 'index.html',context)
 '''
@@ -37,19 +37,22 @@ def noticiasdetalle(request,id):
         form = CommentarioForm(request.POST)
         if form.is_valid():
             print("Validacion exitosa!")
-            print("Autor:" + form.cleaned_data["autor"])
+            #print("Autor:" + form.cleaned_data["autor"])
+            
             print("Comentario:" + form.cleaned_data["cuerpo_comentario"])
             comment = Comentarios(
-                autor=form.cleaned_data["autor"],
+                #autor=form.cleaned_data["autor"],
+                autor_id= request.user.id,
                 cuerpo_comentario=form.cleaned_data["cuerpo_comentario"],
                 noticia=datanoticia
             )
+            print(comment)
             comment.save()
 
     context = {
         "noticia": datanoticia,
         "comentarios":lista_comentarios,
-        "MEDIA_ROOT": 'media/img/noticias/',
+        "MEDIA_ROOT": 'media/',
         'comentario_form':form
         
     }

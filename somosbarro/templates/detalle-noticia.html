@@ -7,7 +7,7 @@
 
         <div class="date"> {{ noticia.creado }}</div>
         <div class="col-md-5">
-            <img src="{{noticia.img}}" width="100%" alt="">
+            <img src="../../../media/{{noticia.img}}" width="100%" alt="">
         </div>
         <p>
         {{ noticia.contenido|safe|linebreaksbr}}
@@ -25,12 +25,12 @@
             </form>
         {% else %}
         <p>Para agregar comentarios debe autenticarse <br>
-             <a href="{% url 'blogapp:login' %}">Iniciar sesión</a>
-            <a href="{% url 'blogapp:register' %}">Registrarse</a></p>
+             <a href="{% url 'blog_auth:login' %}">Iniciar sesión</a>
+            <a href="{% url 'blog_auth:register' %}">Registrarse</a></p>
         {% endif %}
         <hr>
         <div class="container">
-            {% for comentario in noticia.comentario.all %}
+            {% for comentario in noticia.comentarios.all %}
                 <br>
                 {% if user.is_authenticated or comment.approved_comment %}
 
@@ -39,7 +39,7 @@
                         <a class="btn btn-default" href="{% url 'comment_remove' id=comentario.id %}"><span class="glyphicon glyphicon-remove"></span></a>
                         <a class="btn btn-default" href="{% url 'comment_approve' id=comentario.id %}"><span class="glyphicon glyphicon-ok"></span></a>
                     {% endif %}
-                    <p>{{ cuerpo_comentario.text|safe|linebreaks }}</p>
+                    <p>{{ comentario.cuerpo_comentario|safe|linebreaks }}</p>
                     <p>Posted by: <strong>{{ comentario.autor }}</strong></p>
                 {% endif %}
                 {% empty %}

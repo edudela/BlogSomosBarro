@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="{% static 'css/novedades.css'%}">
     <link rel="stylesheet" href="{% static 'css/publicaciones.css'%}">
     <link rel="stylesheet" href="{% static 'css/contacto.css'%}">
+    <link rel="stylesheet" href="{% static 'css/contacto2.css'%}">
     <link rel="stylesheet" href="{% static 'css/footer.css'%}">
 
     <title>Somos Barro</title>
 </head>
+
 <body>
  <!--Navegacion-->
     <header class="header">
@@ -49,7 +51,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contactanos</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'contactanos'%}">Contactanos</a>
                 </li>
                 </ul>
             </nav>
@@ -64,7 +66,7 @@
                 </form>
                 </div>
                 {% if user.is_authenticated %}
-                    <p>Hola {{ user.username }}</p>
+                    <h3>Hola {{ user.username }}</h3>
                     <a class="btn btn-success" href="{%url 'blog_auth:logout'%}">Cerrar Sesión</a>
                 {% else %}
                 <div class="botones__acceso">

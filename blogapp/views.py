@@ -25,6 +25,9 @@ def index(request):
 def quienessomos(request):
     return render(request, 'quienessomos.html',{})
 
+def contactanos(request):
+    return render(request, 'Contactanos.html', {})
+
 def noticiasdetalle(request,id):
     try:
         datanoticia = Noticias.objects.get(id=id)

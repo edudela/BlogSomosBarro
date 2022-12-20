@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block contenido %}
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+<!--</head>-->
+<!--<body>-->
+    <div class="container-form">
+        <div class="info-form">
+            <h1>Contáctanos</h1>
+            <p>¿Querés colaborar con nosotros?, ¿Tenés sugerencias o propuestas?, ¿Te gusta lo que ves y querés dejar tu aporte?.</p>
+            <a href="#"><i class="fa fa-phone"></i> 0362 471-4588 </a>
+            <a href="#"><i class="fa fa-envelope"></i> somosbarro@gmail.com</a>
+            <a href="https://www.google.com.ar/maps/place/Sta+Mar%C3%ADa+de+Oro+2685,+Resistencia,+Chaco/@-27.4717682,-59.0134895,17z/data=!3m1!4b1!4m5!3m4!1s0x94450c9fcabdae89:0x46bf48b7e961372c!8m2!3d-27.471773!4d-59.0113008"><i class="fa fa-map-marked"></i> Santa Maria de Oro 2685, Resistencia, Argentina</a>
+            <a href="https://www.facebook.com/fundacionsomosbarro"><i class="fa fa-facebook"></i> Fundacion Somos Barro </a>
+            <a href="https://www.instagram.com/fundacionsomosbarro/"><i class="fa fa-instagram"></i> fundacionsomosbarro </a>
+        </div>
+        <form action="#" autocomplete="off">
+            <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
+            <input type="emal" name="email" placeholder="Tu Email" class="campo">
+            <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
+            <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+        </form>
+    </div>
+</body>
+{% endblock %}

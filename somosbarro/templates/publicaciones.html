@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block contenido %}
+       
+     <!--seccion publicaciones-->
+        
+<section class="publicaciones">
+    <h2 class="titulo__publicaciones">Publicaciones</h2>
+
+    <div class=" tarjetas row row-cols-1 row-cols-md-3 g-4">
+        {% for noticia in todasnoticias %}
+        <div class="col">
+            <div class="card h-100">
+            <img src="{{ noticia.img.url }}" width="300" alt="" class="card-img-top">
+            <!--<img src="media/img/noticias/img" width="500" alt="" class="card-img-top">-->
+            <div class="card-body">
+                <h5 class="card-title">{{ noticia.titulo }}</h5>
+                <p class="card-text">{{ noticia.contenido }}.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Publicado: {{ noticia.publicado }}</small>
+                <p><a class="btn btn-secondary" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
+            </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+</section>
+
+
+{% endblock %}

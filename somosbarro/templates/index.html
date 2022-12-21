@@ -9,8 +9,8 @@
                 <h2>Nuestro principal objetivo es construinos colectivamente a través del Arte, promoviendo políticas de inclusión, ampliando el acceso a la educación.</h2>
             </div>
 
-            <div class="presentacion_imagen"> 
-                <img src="{% static 'img/presentacionimagen.svg'%}" alt="iamgen"> 
+            <div class="presentacion_imagen">
+                <img src="{% static 'img/presentacionimagen.svg'%}" alt="imagen" class="imagen-presentacion"> 
                 
             </div>
 
@@ -27,7 +27,7 @@
               {% for noticia in noticiasdestacadas%}
                 <div class="col">
                   <div class="card h-100">
-                    <img src="media/{{noticia.img}}" width="300" alt="" class="card-img-top">
+                    <img src="{{ noticia.img.url }}" width="300" alt="" class="card-img-top">
                     <!--<img src="media/img/noticias/img" width="500" alt="" class="card-img-top">-->
                     <div class="card-body">
                       <h5 class="card-title">{{ noticia.titulo }}</h5>

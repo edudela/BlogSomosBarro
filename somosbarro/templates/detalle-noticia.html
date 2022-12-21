@@ -7,7 +7,7 @@
 
         <div class="date"> {{ noticia.creado }}</div>
         <div class="col-md-5">
-            <img src="../../../media/{{noticia.img}}" width="100%" alt="">
+            <img src="{{ noticia.img.url }}" width="100%" alt="">
         </div>
         <p>
         {{ noticia.contenido|safe|linebreaksbr}}

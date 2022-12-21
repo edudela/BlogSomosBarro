@@ -18,10 +18,16 @@ def index(request):
         "MEDIA_ROOT":'media/img/noticias/'
     }
     return render(request, 'index.html',context)
-'''
-def index(request):
-    return render(request,'index.html',{})
-'''
+
+def publicaciones(request):
+    #texto = {'mensaje_texto': 'Esta es mi primer pagina :)'}
+    ultimasnoticias = Noticias.objects.all().order_by('creado').reverse()
+    context ={
+        'todasnoticias':ultimasnoticias,
+        "MEDIA_ROOT":'media/img/noticias/'
+    }
+    return render(request, 'publicaciones.html',context)
+
 def quienessomos(request):
     return render(request, 'quienessomos.html',{})
 

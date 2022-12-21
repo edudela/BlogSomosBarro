@@ -24,6 +24,7 @@ urlpatterns = [
     path('',views.index, name = 'index'),
     path('quienessomos/',views.quienessomos, name = 'quienessomos'),
     path('Contactanos/',views.contactanos, name = 'contactanos'),
+    path('publicaciones/',views.publicaciones, name = 'publicaciones'),
     path('admin/', admin.site.urls),
     url('noticias/', include('blogapp.urls')),
     path('registration/', include('blog_auth.urls')),
